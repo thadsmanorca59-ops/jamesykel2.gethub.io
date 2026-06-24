@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>3 Growing Flowers • I LOVE YOU 💐</title>
+ <style>
+ *{margin:0;padding:0;box-sizing:border-box}
+ body{
+   background:linear-gradient(180deg,#b2e0f9,#e2f4d6);
+   min-height:100vh;
+   display:flex;flex-direction:column;
+   justify-content:center;align-items:center;
+   font-family:Arial,sans-serif;
+   padding:20px;
+ }
+ .msg{
+   font-size:28px; font-weight:bold;
+   color:#d6336c; margin-bottom:30px;
+   opacity:0; transform:translateY(-10px);
+   animation:fadeIn 2.5s 3s forwards;
+   text-shadow:0 0 8px #ffb3d1;
+ }
+ .garden{display:flex;gap:40px;align-items:end}
+ .flower-set{position:relative;width:90px;height:220px}
+ /* Stem & Leaf */
+ .stem{
+   position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+   width:7px;background:#2e913e;border-radius:4px;
+   transform-origin:bottom;height:0;
+   animation:growStem 2s forwards ease-out
+ }
+ .leaf{
+   position:absolute;background:#38b04a;border-radius:50%;
+   width:24px;height:13px;opacity:0;
+   animation:showLeaf 1.8s 0.6s forwards
+ }
+ .leaf.L1{top:45px;left:-20px;transform:rotate(-28deg)}
+ .leaf.L2{top:75px;right:-20px;transform:rotate(28deg)}
+ /* Flower Head */
+ .flower{
+   position:absolute;top:10px;left:50%;transform:translateX(-50%) scale(0);
+   width:52px;height:52px;
+   animation:bloom 2s 1.2s forwards cubic-bezier(.4,0,.2,1)
+ }
+ .petal{
+   position:absolute;border-radius:50%;width:20px;height:32px;left:16px;top:0;
+   transform-origin:center bottom
+ }
+ .p1{background:#ff6699;transform:rotate(0deg)}
+ .p2{background:#ff77aa;transform:rotate(45deg)}
+ .p3{background:#ff6699;transform:rotate(90deg)}
+ .p4{background:#ff77aa;transform:rotate(135deg)}
+ .p5{background:#ff6699;transform:rotate(180deg)}
+ .p6{background:#ff77aa;transform:rotate(225deg)}
+ .p7{background:#ff6699;transform:rotate(270deg)}
+ .p8{background:#ff77aa;transform:rotate(315deg)}
+ .center{
+   position:absolute;top:8px;left:18px;width:16px;height:16px;
+   background:#ffdd33;border-radius:50%;box-shadow:0 0 6px #ffcc00
+ }
+ /* Delays so they open one after another */
+ .f2 .stem{animation-delay:.4s}
+ .f2 .leaf{animation-delay:.8s}
+ .f2 .flower{animation-delay:1.6s}
+ .f3 .stem{animation-delay:.8s}
+ .f3 .leaf{animation-delay:1.2s}
+ .f3 .flower{animation-delay:2s}
+ /* Animations */
+ @keyframes growStem {to{height:130px}}
+ @keyframes showLeaf {to{opacity:1}}
+ @keyframes bloom {to{transform:translateX(-50%) scale(1)}}
+ @keyframes fadeIn {to{opacity:1;transform:translateY(0)}}
+ </style>
+ </head>
+ <body>
+ <div class="msg">💐 I LOVE YOU ❤️</div>
+ <div class="garden">
+   <!-- Flower 1 -->
+   <div class="flower-set f1">
+     <div class="stem"><div class="leaf L1"></div><div class="leaf L2"></div></div>
+     <div class="flower">
+       <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
+       <div class="petal p5"></div><div class="petal p6"></div><div class="petal p7"></div><div class="petal p8"></div>
+       <div class="center"></div>
+     </div>
+   </div>
+   <!-- Flower 2 -->
+   <div class="flower-set f2">
+     <div class="stem"><div class="leaf L1"></div><div class="leaf L2"></div></div>
+     <div class="flower">
+       <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
+       <div class="petal p5"></div><div class="petal p6"></div><div class="petal p7"></div><div class="petal p8"></div>
+       <div class="center"></div>
+     </div>
+   </div>
+   <!-- Flower 3 -->
+   <div class="flower-set f3">
+     <div class="stem"><div class="leaf L1"></div><div class="leaf L2"></div></div>
+     <div class="flower">
+       <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
+       <div class="petal p5"></div><div class="petal p6"></div><div class="petal p7"></div><div class="petal p8"></div>
+       <div class="center"></div>
+     </div>
+   </div>
+ </div>
+ </body>
+ </html>
